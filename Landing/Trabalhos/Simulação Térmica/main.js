@@ -1981,7 +1981,7 @@ addAzmtToArr()
 var c = document.getElementById('myChart')
 var ctx = c.getContext('2d')
 
-ctx.font = '1.5rem Poppins'
+ctx.font = '1rem Swis721 LtEx BT'
 ctx.textAlign = 'center'
 ctx.fillText('Escolha os Parâmetros', 234, 175) // PLOTO NA TELA A INFORMAÇÃO PARA SELECIONAR OS PARAMETROS DE VIDRO
 
