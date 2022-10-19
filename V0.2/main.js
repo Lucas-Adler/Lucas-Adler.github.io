@@ -42611,13 +42611,13 @@ btn01.addEventListener('click', addValue);
   console.log(myChart.data.datasets[0].data)
  }
 
- const btn02 = document.getElementById('btn-sim02');
-btn02.addEventListener('click', addValue);
- function addValue() {
+//  const btn02 = document.getElementById('btn-sim02');
+// btn02.addEventListener('click', addValue);
+//  function addValue() {
   
-  myChart.data.datasets[0].data.push(dataBase2())
-  myChart.update();
- }
+//   myChart.data.datasets[0].data.push(dataBase2())
+//   myChart.update();
+//  }
 
 
 //BOTAO DE NOVO RESULTADO
