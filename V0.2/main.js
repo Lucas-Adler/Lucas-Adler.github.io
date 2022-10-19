@@ -42515,13 +42515,6 @@ addBriseVToArr()
 
 // --- Função Botão -----------------------------------------------------------------
 
-var c = document.getElementById('myChart')
-var ctx = c.getContext('2d')
-
-ctx.font = '1rem Swis721 LtEx BT'
-ctx.textAlign = 'center'
-ctx.fillText('Escolha os Parâmetros', 234, 175) // PLOTO NA TELA A INFORMAÇÃO PARA SELECIONAR OS PARAMETROS DE VIDRO
-
 
 //BOTAO DE SELEÇÃO
 function dataBase() {
@@ -42540,9 +42533,9 @@ function dataBase() {
       return item.TotalElectricity
     }) // EXTRAIO O VALOR DE ENERGIA QUE O VIDRO TRANSMITIU
 
-  let sim_01 = parseInt(resultado) // CONVERTO O RESULTADO DO .MAP() EM UMA INTEGRAL
+  let sim_01 = resultado // CONVERTO O RESULTADO DO .MAP() EM UMA INTEGRAL
     return sim_01
-  
+
 
   let copyData = [addCityToArr(), addGlassToArr(), addWwrToArr(),addAzmtToArr(), addBriseHToArr(), addBriseVToArr()]
 
@@ -42550,7 +42543,7 @@ function dataBase() {
     navigator.clipboard.writeText(copyData)
   }
   clipboard()
-}
+} 
 
 function dataBase2() {
   const resultado2 = data2
@@ -42569,8 +42562,9 @@ function dataBase2() {
 
 
   console.log(resultado2) 
-  let sim_02 = parseInt(resultado2) // CONVERTO O RESULTADO DO .MAP() EM UMA INTEGRAL
-    return sim_02
+  let sim_02 = resultado2 // CONVERTO O RESULTADO DO .MAP() EM UMA INTEGRAL
+    return sim_02;
+
   let copyData = [addCityToArr(), addGlassToArr(), addWwrToArr(),addAzmtToArr(), addBriseHToArr(), addBriseVToArr()]
 
   function clipboard() {
@@ -42579,38 +42573,58 @@ function dataBase2() {
   clipboard()
 }
 
-function plotTable() {
-  const ctx = document.getElementById('myChart').getContext('2d')
-  const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: [],
-      datasets: [
-        {
-          label: 'Resultado (kW/ano)',
-          data: [
-            { x: 'Valor Simulado 01', y: dataBase() },
-            { x: 'Valor Simulado 02', y: dataBase2() }
-          ], // OS DADOS QUE SERÃO APRESENTADOS NO GRÁFICO
 
-          backgroundColor: ['rgba(54, 162, 235, 0.2)'],
-          borderColor: ['rgba(54, 162, 235, 1)'],
-          borderWidth: 1
-        }
-      ]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
+const ctx = document.getElementById('myChart').getContext('2d')
+const myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['simulação 01','simulação 02'],
+    datasets: [
+      {
+        label: 'Resultado (kW/ano)',
+        data: [
+          
+        ], // OS DADOS QUE SERÃO APRESENTADOS NO GRÁFICO
+
+        backgroundColor: ['rgba(54, 162, 235, 0.2)'],
+        borderColor: ['rgba(54, 162, 235, 1)'],
+        borderWidth: 1
+      }
+    ]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
       }
     }
-  }) // O GRAFICO QUE É APRESENTADO NA TELA
-} 
+  }
+}) // O GRAFICO QUE É APRESENTADO NA TELA
+
+
+const btn01 = document.getElementById('btn-sim01');
+btn01.addEventListener('click', addValue);
+ function addValue() {
+  
+  myChart.data.datasets[0].data.push(dataBase());
+  myChart.update();
+  console.log(myChart.data.datasets[0].data)
+ }
+
+ const btn02 = document.getElementById('btn-sim02');
+btn02.addEventListener('click', addValue);
+ function addValue() {
+  
+  myChart.data.datasets[0].data.push(dataBase2())
+  myChart.update();
+ }
 
 
 //BOTAO DE NOVO RESULTADO
+const btn03 = document.getElementById('btn-reset');
+btn03.addEventListener('click',reload)
 function reload() {
-  document.location.reload(true)
+  myChart.data.datasets[0].data = 0,0;
+  myChart.update();
+  
 }

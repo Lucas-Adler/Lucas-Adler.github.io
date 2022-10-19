@@ -66,37 +66,11 @@ section .content p {
   line-height: 150%;
 }
 
-.btnSelect {
-  display: inline;
-  align-items: left;
-  margin-right:1rem;
-}
-
-.btnSelect-Sim {
-   font-family: 'Swis721 LtEx BT', sans-serif;
-  display: inline-block;
-  align-items: left;
-  justify-content: center;
-  
-  position: relative;
-  
-  width: 4rem;
-  margin: 0.5rem;
-  
-  border: none;
-  background-color: white;
-}
-
-.btnSelect-Sim:hover {
-  text-decoration: overline;
-  cursor:pointer;
-}
-
 .buttonSelect {
   font-family: 'Swis721 LtEx BT', sans-serif;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   
   position: relative;
   
@@ -111,6 +85,8 @@ section .content p {
   text-decoration: overline;
   cursor: pointer;
 }
+
+
 /*----Cabeçalho----*/
 
 #header { 

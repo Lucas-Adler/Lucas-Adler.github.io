@@ -71,13 +71,11 @@
                 <option value="3">6 unidades</option>
                 <option value="4">8 unidades</option>
               </select>
-              <div class="btnSelect">
-                <button id="btn-sim01" class="btnSelect-Sim" >Sim 01</button>
-                <button id="btn-sim02" class="btnSelect-Sim"  >Sim 02</button>
-            </div>
-          <button id="btn-reset" class="buttonSelect" onclick="reload()">Nova Simulação</button>
+
+          <button id="button" class="buttonSelect" onclick="dataBase()" >Selecionar e Copiar</button>
+          <button id="reload" class="buttonSelect" onclick="reload()">Nova Simulação</button>
         </div>
-        
+        <label id="data"></label>
         <div class="canvas">
           <canvas id="myChart" width="468" height="350"> 
           </canvas>
@@ -85,5 +83,5 @@
         </section>
         
     </body>
-    <script src="/main.js"> </script>
+    <script src="main.js"> </script>
 </html>
