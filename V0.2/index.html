@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" width="device-width, initial-scale=1.0"/>
+        <title>Simulação Térmica</title> 
+      
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="dist/clipboard.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        
+        
+    </head>
+    <body>
+        <nav id="navigation">
+          <div class="logo">
+          <a href="">AeE</a>
+          </div>
+          <!-- <div class="menu">
+            <a href="./Trabalhos/trabalhos.html" >Trabalhos </a>
+            <a href="" >Blog </a>
+            <a href="./Sobre/Sobre.html" >Sobre </a>
+            <a href="./Contato/Contato.html" >Contato </a>
+          </div> -->
+        </nav>
+    
+       <section id="header">
+        <h1>Simulação Térmica</h1>
+        </section>
+        <section id="container">
+        <div class="select">
+            <p class="selectP">Cidade:</p>
+            <select name="city" id="city"> 
+              <option value="1">Florianópolis - SC</option>
+              <option value="2">Salvador - BA</option>
+              <option value="3">Belo Horizonte - MG</option>
+            </select>
+            <p class="selectP">Vidro:</p>
+            <select name="glass" id="glass">
+                <option value="1" id="g1">FS80</option>
+                <option value="2" id="g2">FS70</option>
+                <option value="3" id="g3">FS60</option>
+                <option value="4" id="g4">FS50</option>
+                <option value="5" id="g5">FS40</option>
+                <option value="6" id="g6">FS30</option>
+            </select>
+            <p class="selectP" alt="Razão Parede/Janela">WWR:</p>
+            <select name="wwr" id="wwr">
+                <option value="1">40%</option>
+                <option value="2">50%</option>
+                <option value="3">60%</option>
+            </select>
+              <p class="selectP" alt="orientação">Orientação</p>
+              <select name="azmt" id="azmt">
+                <option value="1">Norte</option>
+                <option value="2">Sul</option>
+                <option value="3">Leste</option>
+                <option value="4">Oeste</option>
+              </select>
+              <p class="selectP" alt="tipo de brise horizontal">Brises Horizontais</p>
+              <select name="briseh" id="briseh">
+                <option value="1">sem brise</option>
+                <option value="2">10 cm</option>
+                <option value="3">20 cm</option>
+                <option value="4">30 cm</option>
+              </select>   
+              <p class="selectP" alt="tipo de brise vertical">Brises Verticais (30cm)</p> 
+              <select name="brisev" id="brisev">
+                <option value="1">sem brise</option>
+                <option value="2">4 unidades</option>
+                <option value="3">6 unidades</option>
+                <option value="4">8 unidades</option>
+              </select>
+
+          <button id="button" class="buttonSelect" onclick="dataBase()" >Selecionar 01</button>
+          <button id="button2" class="buttonSelect" onclick="dataBase2()">Selecionar 02</button>
+          <button id="buttonplot" class="buttonSelect" onclick="plotTable()">Plotar</button>
+          <button id="reload" class="buttonSelect" onclick="reload()">Nova Simulação</button>
+        </div>
+        <label id="data"></label>
+        <div class="canvas">
+          <canvas id="myChart" width="468" height="350"> 
+          </canvas>
+        </div>
+        </section>
+        
+    </body>
+    <script src="/Blog Pessoal/Lucas-Adler.github.io/V0.2/main.js"> </script>
+</html>
