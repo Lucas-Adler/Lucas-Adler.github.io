@@ -111,6 +111,17 @@ section .content p {
   text-decoration: overline;
   cursor: pointer;
 }
+
+.btn-form {
+  font-family: 'Swis721 LtEx BT', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+
+  padding-top: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
 /*----Cabeçalho----*/
 
 #header { 
@@ -187,3 +198,24 @@ p #resultado {
   margin: auto;
 }
 
+/*----CopyRight----*/
+.copyright {
+  font-size: .7rem;
+  color: grey;
+}
+
+.copyright a {
+  text-decoration: none;
+  color: grey;
+}
+
+.copyright a:hover {
+  text-decoration: overline;
+  color:black;
+}
+
+footer {
+  position: fixed;
+  bottom: 1vw;
+  right: 5vw;
+}
